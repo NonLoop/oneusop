@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="brand">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>oneusop · 用心打造每一款应用</title>
+<meta name="description" content="oneusop 出品的一系列优质应用：动物迷宫、卡通绘画、趣味拼图、精美时钟、小番茄、萌宠。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<div class="bg-decor"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+<div class="bg-grid"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><span class="logo">🚀</span><span data-i18n="brand">oneusop</span></a>
+    <div class="nav-links">
+      <a href="#apps" data-i18n="apps">全部应用</a>
+      <a href="#apps">Animal Maze</a>
+      <a href="#apps">Little Tomato</a>
+      <a href="#apps">Cute Pet</a>
+    </div>
+    <div class="nav-actions">
+      <span class="lang"><button data-lang="zh" class="active">中</button><button data-lang="en">EN</button></span>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container" style="grid-template-columns:1fr;text-align:center;min-height:auto;padding-top:90px;padding-bottom:40px">
+  <div>
+    <span class="badge" data-i18n="allApps">探索 oneusop 的全部应用</span>
+    <h1><span class="hl" data-i18n="brand">oneusop</span></h1>
+    <p class="tagline" id="hub-tagline">用心打造每一款应用，让数字生活更有温度</p>
+    <p class="lead" id="hub-lead" style="margin-left:auto;margin-right:auto">从孩子的启蒙益智，到成人的专注与放松，我们专注于把简单的想法做到极致。</p>
+  </div>
+</header>
+
+<section class="section-pad container" id="apps">
+  <div class="reveal" style="text-align:center">
+    <span class="eyebrow" data-i18n="apps">全部应用</span>
+    <h2 class="section-title" data-i18n="apps">全部应用</h2>
+    <p class="section-sub" id="apps-sub">六款精心设计的应用，覆盖启蒙、专注、放松与美好日常。</p>
+  </div>
+  <div class="app-grid" id="app-grid"></div>
+</section>
+
+<section class="section-pad container">
+  <div class="cta-band reveal">
+    <h2 data-i18n="ctaTitle">立即开启精彩体验</h2>
+    <p data-i18n="ctaSub">在 iPhone 与 iPad 上免费下载，开启你的旅程。</p>
+    <a class="appstore" data-appstore href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2 1.6-3 1.7-3a3.7 3.7 0 0 0-2.9-1.6c-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7A3.9 3.9 0 0 0 5.4 11c-1.3 2.3-.3 5.7 1 7.6.6.9 1.3 2 2.3 2 1 0 1.3-.6 2.5-.6s1.5.6 2.6.6 1.6-.9 2.2-1.9c.7-1 1-2 1-2a5.4 5.4 0 0 1-2.6-4.8zM14.2 5.4a3.6 3.6 0 0 0 .8-2.6 3.7 3.7 0 0 0-2.4 1.3 3.5 3.5 0 0 0-.8 2.5 3 3 0 0 0 2.4-1.2z"/></svg><span><small data-i18n="getApp">获取 App</small><b>App Store</b></span></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="brand"><span class="logo">🚀</span><span data-i18n="brand">oneusop</span></div>
+      <p style="margin-top:10px">© <span id="year"></span> oneusop. <span data-i18n="rights">保留所有权利。</span></p>
+    </div>
+    <div class="f-links">
+      <a href="privacy.html" data-i18n="privacy">隐私政策</a>
+      <a href="#" data-i18n="support">支持</a>
+      <a href="index.html" data-i18n="apps">全部应用</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.HUB_APPS = [
+    { url:'animal-maze/', icon:'🦁', c1:'#ff9a3c', c2:'#19c37d',
+      name:{zh:'动物迷宫',en:'Animal Maze'}, tag:{zh:'儿童逻辑启蒙',en:'Kids Logic'},
+      desc:{zh:'在奇趣迷宫中锻炼孩子的逻辑思维与专注力。',en:'Build logical thinking through playful mazes.'} },
+    { url:'cartoon-drawing/', icon:'🎨', c1:'#a18cd1', c2:'#fbc2eb',
+      name:{zh:'卡通绘画',en:'Cartoon Drawing'}, tag:{zh:'启蒙绘画',en:'Drawing'},
+      desc:{zh:'好用又有趣的启蒙绘画软件，激发孩子的创造力。',en:'A fun drawing app that sparks creativity.'} },
+    { url:'fun-puzzle/', icon:'🧩', c1:'#22b8cf', c2:'#fdd835',
+      name:{zh:'趣味拼图',en:'Fun Puzzle'}, tag:{zh:'益智拼图',en:'Puzzle'},
+      desc:{zh:'益智又有趣的拼图游戏，老少皆宜的休闲之选。',en:'Delightful puzzles for all ages.'} },
+    { url:'beautiful-clock/', icon:'🕰️', c1:'#27334f', c2:'#0f172a',
+      name:{zh:'精美时钟',en:'Beautiful Clock'}, tag:{zh:'全屏时钟',en:'Fullscreen Clock'},
+      desc:{zh:'一款好看又专业的全屏时钟，装点你的桌面。',en:'A beautiful, pro fullscreen clock.'} },
+    { url:'little-tomato/', icon:'🍅', c1:'#ff5a4d', c2:'#ffb199',
+      name:{zh:'小番茄',en:'Little Tomato'}, tag:{zh:'番茄钟专注',en:'Focus Timer'},
+      desc:{zh:'极简番茄钟，帮你专注学习与生活。',en:'A minimal pomodoro timer for focus.'} },
+    { url:'cute-pet/', icon:'🐱', c1:'#ff8fb1', c2:'#ffc3a0',
+      name:{zh:'萌宠',en:'Cute Pet'}, tag:{zh:'可爱宠物',en:'Virtual Pet'},
+      desc:{zh:'可可爱爱的宠物 App，陪伴你的每一天。',en:'An adorable pet companion app.'} },
+    { url:'small-clock/', icon:'⏰', c1:'#38bdf8', c2:'#22d3ee',
+      name:{zh:'小钟',en:'Small Clock'}, tag:{zh:'极简时钟',en:'Minimal Clock'},
+      desc:{zh:'精致小巧的随身时钟，装点每一块屏幕。',en:'A tiny, beautiful clock for every screen.'} },
+    { url:'gadget-set/', icon:'🧰', c1:'#7c3aed', c2:'#06b6d4',
+      name:{zh:'工具箱',en:'Gadget Set'}, tag:{zh:'实用工具箱',en:'Toolbox'},
+      desc:{zh:'手电筒、尺子、水平仪等实用工具一应俱全。',en:'Flashlight, ruler, level and more in one kit.'} }
+  ];
+  window.HUB_TEXT = {
+    hubTagline:{zh:'用心打造每一款应用，让数字生活更有温度',en:'Crafting apps with heart, for a warmer digital life'},
+    hubLead:{zh:'从孩子的启蒙益智，到成人的专注与放松，我们专注于把简单的想法做到极致。',en:'From kids’ early learning to adult focus and relaxation, we perfect the simplest ideas.'},
+    appsSub:{zh:'六款精心设计的应用，覆盖启蒙、专注、放松与美好日常。',en:'Six thoughtfully designed apps for learning, focus, relaxation and everyday joy.'}
+  };
+</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

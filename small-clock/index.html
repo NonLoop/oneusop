@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="smallclock">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小钟 · 精致小巧的美丽时钟 | oneusop</title>
+<meta name="description" content="Small Clock：精致小巧的美丽时钟，装点每一块屏幕。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<div class="bg-decor"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+<div class="bg-grid"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="nav-left">
+      <a class="nav-back" href="../index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        <span data-i18n="backHome">返回首页</span>
+      </a>
+      <a class="brand" href="../index.html"><span class="logo">🚀</span><span data-i18n="brand">oneusop</span></a>
+    </div>
+    <div class="nav-links">
+      <a href="../index.html" data-i18n="apps">全部应用</a>
+      <a href="#features">Small Clock</a>
+    </div>
+    <div class="nav-actions">
+      <span class="lang"><button data-lang="zh" class="active">中</button><button data-lang="en">EN</button></span>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container">
+  <div class="hero-text">
+    <span class="badge" id="app-badge">极简时钟</span>
+    <h1 id="app-name">小钟</h1>
+    <p class="tagline" id="app-tagline">精致小巧，随处的美丽时钟</p>
+    <p class="lead" id="app-desc">小钟以极简的设计呈现时间本来的样子，多款表盘与小组件让每一块屏幕都干净又好看。</p>
+    <div class="cta">
+      <a class="appstore" data-appstore href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2 1.6-3 1.7-3a3.7 3.7 0 0 0-2.9-1.6c-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7A3.9 3.9 0 0 0 5.4 11c-1.3 2.3-.3 5.7 1 7.6.6.9 1.3 2 2.3 2 1 0 1.3-.6 2.5-.6s1.5.6 2.6.6 1.6-.9 2.2-1.9c.7-1 1-2 1-2a5.4 5.4 0 0 1-2.6-4.8zM14.2 5.4a3.6 3.6 0 0 0 .8-2.6 3.7 3.7 0 0 0-2.4 1.3 3.5 3.5 0 0 0-.8 2.5 3 3 0 0 0 2.4-1.2z"/></svg><span><small data-i18n="getApp">获取 App</small><b>App Store</b></span></a>
+    </div>
+    <ul class="stats" id="stats"></ul>
+  </div>
+  <div class="hero-visual">
+    <div class="phone">
+      <div class="phone-screen" style="--screen:linear-gradient(160deg,#e0f2fe,#cffafe)">
+        <div class="screen-top">
+          <div class="s-emoji" id="screen-emoji">⏰</div>
+          <div class="s-title" id="screen-title">小钟</div>
+          <div class="s-sub" id="screen-sub">极简时钟</div>
+        </div>
+        <div class="screen-body" id="screen-body"></div>
+      </div>
+    </div>
+    <span class="chip c1"><span class="ic">⏰</span><span data-i18n="featuresTitle">核心功能</span></span>
+    <span class="chip c2"><span class="ic">⭐</span>4.9</span>
+    <span class="chip c3"><span class="ic">📐</span>Widget</span>
+  </div>
+</header>
+
+<section class="section-pad container" id="features">
+  <div class="reveal" style="text-align:center">
+    <span class="eyebrow" data-i18n="featuresTitle">核心功能</span>
+    <h2 class="section-title" id="features-title" data-i18n="featuresTitle">核心功能</h2>
+    <p class="section-sub" id="features-sub" data-i18n="featuresSub">为时间与桌面精心打磨的每一处细节</p>
+  </div>
+  <p class="features-intro reveal" id="features-intro"></p>
+  <div class="features-grid" id="features-grid"></div>
+</section>
+
+<section class="section-pad container">
+  <div class="reveal" style="text-align:center">
+    <span class="eyebrow" data-i18n="showcaseTitle">精美界面一览</span>
+    <h2 class="section-title" data-i18n="showcaseTitle">精美界面一览</h2>
+    <p class="section-sub" id="showcase-sub" data-i18n="showcaseSub">简洁、直观、令人愉悦的使用体验</p>
+  </div>
+  <div class="showcase" id="showcase"></div>
+</section>
+
+<section class="section-pad container">
+  <div class="cta-band reveal">
+    <h2 id="cta-title" data-i18n="ctaTitle">立即开启精彩体验</h2>
+    <p id="cta-sub" data-i18n="ctaSub">在 iPhone 与 iPad 上免费下载，开启你的旅程。</p>
+    <a class="appstore" data-appstore href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2 1.6-3 1.7-3a3.7 3.7 0 0 0-2.9-1.6c-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7A3.9 3.9 0 0 0 5.4 11c-1.3 2.3-.3 5.7 1 7.6.6.9 1.3 2 2.3 2 1 0 1.3-.6 2.5-.6s1.5.6 2.6.6 1.6-.9 2.2-1.9c.7-1 1-2 1-2a5.4 5.4 0 0 1-2.6-4.8zM14.2 5.4a3.6 3.6 0 0 0 .8-2.6 3.7 3.7 0 0 0-2.4 1.3 3.5 3.5 0 0 0-.8 2.5 3 3 0 0 0 2.4-1.2z"/></svg><span><small data-i18n="getApp">获取 App</small><b>App Store</b></span></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="brand"><span class="logo">🚀</span><span data-i18n="brand">oneusop</span></div>
+      <p style="margin-top:10px">© <span id="year"></span> oneusop. <span data-i18n="rights">保留所有权利。</span></p>
+    </div>
+    <div class="f-links">
+      <a href="../privacy.html?app=small-clock" data-i18n="privacy">隐私政策</a>
+      <a href="#" data-i18n="support">支持</a>
+      <a href="../index.html" data-i18n="apps">全部应用</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.APP_CONFIG = {
+  id:'small-clock', theme:'smallclock', icon:'⏰',
+  appStoreUrl:'https://apps.apple.com/us/app/small-clock-beautiful-clock/id6453887726',
+  name:{zh:'小钟',en:'Small Clock'},
+  badge:{zh:'极简时钟',en:'Minimal Clock'},
+  tagline:{zh:'精致小巧，随处的美丽时钟',en:'A tiny, beautiful clock for everywhere'},
+  desc:{zh:'小钟以极简的设计呈现时间本来的样子，多款表盘与小组件让每一块屏幕都干净又好看。',en:'Small Clock shows time in its purest form — dials and widgets that keep every screen clean and pretty.'},
+  stats:[
+    {value:'4.9',label:{zh:'App Store 评分',en:'App Store Rating'}},
+    {value:'10+',label:{zh:'精致表盘',en:'Dial Styles'}},
+    {value:'iPad',label:{zh:'大屏适配',en:'iPad Ready'}}
+  ],
+  features:[
+    {icon:'⏱️',title:{zh:'极简界面',en:'Minimal UI'},desc:{zh:'干净无干扰，一眼看清时间。',en:'Clean and distraction-free, see time at a glance.'},detail:{zh:'剔除一切多余装饰，只留下最纯粹的时间呈现，扫一眼便知，专注当下不被打扰。',en:'Stripping every extra ornament leaves only the purest display of time — one glance tells all, keeping you in the present.'}},
+    {icon:'🎨',title:{zh:'多种表盘',en:'Many Dials'},desc:{zh:'数字、指针、拟物随心切换。',en:'Digital, analog and skeuomorphic faces.'},detail:{zh:'从清晰数字到经典指针再到拟物机械，多种表盘风格随心切换，满足不同审美。',en:'From clear digital to classic hands to skeuomorphic mechanics, switch among dial styles to suit any taste.'}},
+    {icon:'🌈',title:{zh:'主题配色',en:'Themes'},desc:{zh:'清新配色，匹配你的心情。',en:'Fresh palettes to match your mood.'},detail:{zh:'蓝、暖橙等多套清新配色随心情切换，并支持深浅背景，融入任意桌面风格。',en:'Blue, warm-orange and more fresh palettes switch with your mood and support light/dark backgrounds to fit any desktop.'}},
+    {icon:'🔋',title:{zh:'常亮显示',en:'Always On'},desc:{zh:'锁屏常显，随时掌握时间。',en:'Always-on lock screen at a glance.'},detail:{zh:'在支持的机型上开启锁屏常亮，息屏也优雅显示当前时间，抬手即看无需点亮。',en:'On supported devices, the lock screen stays on and shows time elegantly even when dimmed — a raise shows it without waking.'}},
+    {icon:'📐',title:{zh:'桌面小组件',en:'Widgets'},desc:{zh:'精美小组件装点主屏幕。',en:'Beautiful widgets for your home screen.'},detail:{zh:'多种尺寸小部件可添加到主屏与锁屏，让时间以最漂亮的样子常驻你的设备。',en:'Widgets in multiple sizes for home and lock screen keep time living on your device in its prettiest form.'}},
+    {icon:'🌙',title:{zh:'夜间模式',en:'Night Mode'},desc:{zh:'柔光护眼，夜晚不刺眼。',en:'Soft light that is easy on the eyes at night.'},detail:{zh:'入夜自动切换暖色低亮主题，长时间注视也不疲劳，守护你的双眼与睡眠。',en:'At night it switches to a warm, dim theme automatically, staying comfortable for long looks and protecting eyes and sleep.'}}
+  ],
+  featuresIntro:{zh:'少即是多。小钟删去一切多余，只把时间本来的样子交还给你，用精致的表盘与小组件，安静地装点每一块屏幕。',en:'Less is more. Small Clock strips away the extra and returns time to its purest form, quietly decorating every screen with refined dials and widgets.'},
+  screenBody:[
+    {t:'pill',text:{zh:'小组件',en:'Widget'}},
+    {t:'card',a:{zh:'现在 09:24',en:'Now 09:24'},x:{zh:'星期三',en:'Wednesday'}},
+    {t:'row',a:{zh:'表盘',en:'Dial'},x:'🎨',b:{zh:'主题',en:'Theme'},y:'🌈'},
+    {t:'circle',icon:'⏰'},
+    {t:'grid',cells:['🌅','🌤️','🌙','🕐','⏱️','💡']}
+  ],
+  shots:[
+    {bg:'linear-gradient(160deg,#38bdf8,#22d3ee)',icon:'⏰',title:{zh:'表盘',en:'Dials'},rows:[{a:{zh:'数字',en:'Digital'},x:{zh:'清晰',en:'Clear'}},{a:{zh:'指针',en:'Analog'},x:{zh:'经典',en:'Classic'}}],cap:{zh:'多种风格',en:'Many styles'},detail:{zh:'数字清晰、指针经典，多款表盘覆盖不同场合与审美偏好。',en:'Clear digits and classic hands — multiple dials cover different occasions and aesthetic preferences.'}},
+    {bg:'linear-gradient(160deg,#22d3ee,#38bdf8)',icon:'📐',title:{zh:'小组件',en:'Widgets'},rows:[{a:{zh:'主屏',en:'Home'},x:{zh:'美观',en:'Pretty'}},{a:{zh:'锁屏',en:'Lock'},x:{zh:'常亮',en:'Always on'}}],cap:{zh:'装点屏幕',en:'Decorate'},detail:{zh:'主屏与锁屏小组件美观实用，让时间以最优雅的形态常驻。',en:'Home and lock-screen widgets are both pretty and useful, keeping time resident in its most elegant form.'}},
+    {bg:'linear-gradient(160deg,#0ea5e9,#06b6d4)',icon:'🌈',title:{zh:'主题',en:'Themes'},rows:[{a:{zh:'清新',en:'Fresh'},x:{zh:'蓝',en:'Blue'}},{a:{zh:'暖阳',en:'Warm'},x:{zh:'橙',en:'Orange'}}],cap:{zh:'随心切换',en:'Switch freely'},detail:{zh:'清新蓝与暖阳橙等配色一键切换，随时匹配你的桌面心情。',en:'Fresh blue, warm orange and more palettes switch in one tap to match your desktop mood anytime.'}}
+  ]
+};
+</script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

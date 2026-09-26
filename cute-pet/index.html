@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="pet">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>萌宠 · 可爱的宠物 App | oneusop</title>
+<meta name="description" content="萌宠：可可爱爱的宠物 App，陪伴你的每一天。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<div class="bg-decor"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+<div class="bg-grid"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="nav-left">
+      <a class="nav-back" href="../index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        <span data-i18n="backHome">返回首页</span>
+      </a>
+      <a class="brand" href="../index.html"><span class="logo">🚀</span><span data-i18n="brand">oneusop</span></a>
+    </div>
+    <div class="nav-links">
+      <a href="../index.html" data-i18n="apps">全部应用</a>
+      <a href="#features">Cute Pet</a>
+    </div>
+    <div class="nav-actions">
+      <span class="lang"><button data-lang="zh" class="active">中</button><button data-lang="en">EN</button></span>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container">
+  <div class="hero-text">
+    <span class="badge" id="app-badge">可爱宠物</span>
+    <h1 id="app-name">萌宠</h1>
+    <p class="tagline" id="app-tagline">可可爱爱的宠物 App，陪伴每一天</p>
+    <p class="lead" id="app-desc">萌宠让你领养专属虚拟宠物，喂食、玩耍、装扮，在治愈互动中收获每天的快乐。</p>
+    <div class="cta">
+      <a class="appstore" data-appstore href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2 1.6-3 1.7-3a3.7 3.7 0 0 0-2.9-1.6c-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7A3.9 3.9 0 0 0 5.4 11c-1.3 2.3-.3 5.7 1 7.6.6.9 1.3 2 2.3 2 1 0 1.3-.6 2.5-.6s1.5.6 2.6.6 1.6-.9 2.2-1.9c.7-1 1-2 1-2a5.4 5.4 0 0 1-2.6-4.8zM14.2 5.4a3.6 3.6 0 0 0 .8-2.6 3.7 3.7 0 0 0-2.4 1.3 3.5 3.5 0 0 0-.8 2.5 3 3 0 0 0 2.4-1.2z"/></svg><span><small data-i18n="getApp">获取 App</small><b>App Store</b></span></a>
+    </div>
+    <ul class="stats" id="stats"></ul>
+  </div>
+  <div class="hero-visual">
+    <div class="phone">
+      <div class="phone-screen" style="--screen:linear-gradient(160deg,#fff0f5,#ffe6ee)">
+        <div class="screen-top">
+          <div class="s-emoji" id="screen-emoji">🐱</div>
+          <div class="s-title" id="screen-title">萌宠</div>
+          <div class="s-sub" id="screen-sub">可爱宠物</div>
+        </div>
+        <div class="screen-body" id="screen-body"></div>
+      </div>
+    </div>
+    <span class="chip c1"><span class="ic">🐱</span><span data-i18n="featuresTitle">核心功能</span></span>
+    <span class="chip c2"><span class="ic">⭐</span>4.9</span>
+    <span class="chip c3"><span class="ic">💝</span>Love</span>
+  </div>
+</header>
+
+<section class="section-pad container" id="features">
+  <div class="reveal" style="text-align:center">
+    <span class="eyebrow" data-i18n="featuresTitle">核心功能</span>
+    <h2 class="section-title" id="features-title" data-i18n="featuresTitle">核心功能</h2>
+    <p class="section-sub" id="features-sub" data-i18n="featuresSub">为陪伴精心打磨的每一处细节</p>
+  </div>
+  <p class="features-intro reveal" id="features-intro"></p>
+  <div class="features-grid" id="features-grid"></div>
+</section>
+
+<section class="section-pad container">
+  <div class="reveal" style="text-align:center">
+    <span class="eyebrow" data-i18n="showcaseTitle">精美界面一览</span>
+    <h2 class="section-title" data-i18n="showcaseTitle">精美界面一览</h2>
+    <p class="section-sub" id="showcase-sub" data-i18n="showcaseSub">简洁、直观、令人愉悦的使用体验</p>
+  </div>
+  <div class="showcase" id="showcase"></div>
+</section>
+
+<section class="section-pad container">
+  <div class="cta-band reveal">
+    <h2 id="cta-title" data-i18n="ctaTitle">立即开启精彩体验</h2>
+    <p id="cta-sub" data-i18n="ctaSub">在 iPhone 与 iPad 上免费下载，开启你的旅程。</p>
+    <a class="appstore" data-appstore href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2 1.6-3 1.7-3a3.7 3.7 0 0 0-2.9-1.6c-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7A3.9 3.9 0 0 0 5.4 11c-1.3 2.3-.3 5.7 1 7.6.6.9 1.3 2 2.3 2 1 0 1.3-.6 2.5-.6s1.5.6 2.6.6 1.6-.9 2.2-1.9c.7-1 1-2 1-2a5.4 5.4 0 0 1-2.6-4.8zM14.2 5.4a3.6 3.6 0 0 0 .8-2.6 3.7 3.7 0 0 0-2.4 1.3 3.5 3.5 0 0 0-.8 2.5 3 3 0 0 0 2.4-1.2z"/></svg><span><small data-i18n="getApp">获取 App</small><b>App Store</b></span></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="brand"><span class="logo">🚀</span><span data-i18n="brand">oneusop</span></div>
+      <p style="margin-top:10px">© <span id="year"></span> oneusop. <span data-i18n="rights">保留所有权利。</span></p>
+    </div>
+    <div class="f-links">
+      <a href="../privacy.html?app=cute-pet" data-i18n="privacy">隐私政策</a>
+      <a href="#" data-i18n="support">支持</a>
+      <a href="../index.html" data-i18n="apps">全部应用</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.APP_CONFIG = {
+  id:'cute-pet', theme:'pet', icon:'🐱',
+  appStoreUrl:'https://apps.apple.com/cn/app/%E8%90%8C%E5%AE%A0-%E5%8F%AF%E7%88%B1%E7%9A%84%E5%AE%A0%E7%89%A9app/id6736706296',
+  name:{zh:'萌宠',en:'Cute Pet'},
+  badge:{zh:'可爱宠物',en:'Virtual Pet'},
+  tagline:{zh:'可可爱爱的宠物 App，陪伴每一天',en:'An adorable pet companion'},
+  desc:{zh:'萌宠让你领养专属虚拟宠物，喂食、玩耍、装扮，在治愈互动中收获每天的快乐。',en:'Cute Pet lets you adopt a virtual companion — feed, play and dress it up for daily joy.'},
+  stats:[
+    {value:'4.9',label:{zh:'App Store 评分',en:'App Store Rating'}},
+    {value:'百万',label:{zh:'快乐宠主',en:'Happy Owners'}},
+    {value:'全年龄',label:{zh:'适合人群',en:'All Ages'}}
+  ],
+  features:[
+    {icon:'🐱',title:{zh:'领养宠物',en:'Adopt'},desc:{zh:'领养猫咪、小狗等萌宠，开启陪伴。',en:'Adopt cats, dogs and more to start companionship.'},detail:{zh:'从软萌小猫到活泼小狗，多种性格宠物等你认领，每只都有专属小脾气与成长路线。',en:'From soft kittens to lively pups, multiple personalities await — each with its own quirks and growth path.'}},
+    {icon:'🍖',title:{zh:'喂食互动',en:'Feed & Play'},desc:{zh:'喂食、抚摸、玩耍，宠物更有灵性。',en:'Feed, pet and play to bring your pet to life.'},detail:{zh:'按时喂食、轻抚与逗玩会提升亲密度，宠物会用表情和动作回应你，越陪越有灵性。',en:'Feeding on time, petting and playing raise intimacy; your pet responds with expressions and moves, growing more lively.'}},
+    {icon:'👗',title:{zh:'装扮小屋',en:'Dress & Decorate'},desc:{zh:'海量服饰与家具，装点专属小窝。',en:'Tons of outfits and furniture for a cozy home.'},detail:{zh:'上百套服饰与五十余件家具自由搭配，从温馨卧室到梦幻花园，打造独一无二的宠物之家。',en:'Mix over a hundred outfits and fifty-plus furniture pieces to build a one-of-a-kind pet home, from cozy bedroom to dream garden.'}},
+    {icon:'🎮',title:{zh:'趣味小游戏',en:'Mini Games'},desc:{zh:'趣味小游戏，和宠物一起开心。',en:'Fun mini-games to enjoy together.'},detail:{zh:'钓鱼、接球等轻松小游戏不仅能赚取道具，还能增进感情，碎片时间也能乐在其中。',en:'Fishing, catch-ball and other light games earn items and deepen your bond — fun even in spare minutes.'}},
+    {icon:'🌟',title:{zh:'成长系统',en:'Growth'},desc:{zh:'陪伴越久，宠物越可爱。',en:'The longer you stay, the cutter it grows.'},detail:{zh:'随着亲密度提升，宠物会解锁新造型与技能，记录你们一路走来的点点滴滴。',en:'As intimacy rises, your pet unlocks new looks and skills, recording every moment you’ve shared.'}},
+    {icon:'💝',title:{zh:'离线陪伴',en:'Always There'},desc:{zh:'随时回来，宠物一直等你。',en:'Come back anytime — your pet is always waiting.'},detail:{zh:'即使你离开，宠物也会在窝里安然等待；回归时的一句「欢迎回来」治愈每一天。',en:'Even when you leave, your pet waits snugly at home; a “welcome back” on return heals every day.'}}
+  ],
+  featuresIntro:{zh:'陪伴是最长情的告白。萌宠用领养、互动与装扮，为你打造一个随时回应的小世界，在平凡日子里添一份柔软的治愈。',en:'Companionship is the deepest affection. Cute Pet uses adoption, interaction and dressing-up to build a world that responds to you anytime, adding soft healing to ordinary days.'},
+  screenBody:[
+    {t:'pill',text:{zh:'我的宠物',en:'My Pet'}},
+    {t:'card',a:{zh:'小白 想玩耍',en:'Baibai wants play'},x:{zh:'心情 开心',en:'Mood: Happy'}},
+    {t:'row',a:{zh:'喂食',en:'Feed'},x:'🍖',b:{zh:'抚摸',en:'Pet'},y:'🤚'},
+    {t:'circle',icon:'🐱'},
+    {t:'grid',cells:['🐶','🐰','🐻','🍎','⚽','💖']}
+  ],
+  shots:[
+    {bg:'linear-gradient(160deg,#ff8fb1,#ffc3a0)',icon:'🐱',title:{zh:'宠物',en:'Pets'},rows:[{a:{zh:'猫咪',en:'Cat'},x:{zh:'软萌',en:'Cute'}},{a:{zh:'小狗',en:'Dog'},x:{zh:'活泼',en:'Lively'}}],cap:{zh:'随心领养',en:'Adopt freely'},detail:{zh:'软萌猫咪与活泼小狗等角色可选，领养即开启专属陪伴旅程。',en:'Pick soft cats, lively dogs and more — adoption starts your own companionship journey.'}},
+    {bg:'linear-gradient(160deg,#ffb3c9,#ffd6c0)',icon:'👗',title:{zh:'装扮',en:'Dress'},rows:[{a:{zh:'服饰',en:'Outfits'},x:{zh:'100+',en:'100+'}},{a:{zh:'家具',en:'Furniture'},x:{zh:'50+',en:'50+'}}],cap:{zh:'装点小窝',en:'Cozy home'},detail:{zh:'100+ 服饰与 50+ 家具自由组合，把小窝布置得既温馨又个性。',en:'Combine 100+ outfits and 50+ furniture freely to make the home both cozy and personal.'}},
+    {bg:'linear-gradient(160deg,#ffc3a0,#ff8fb1)',icon:'🎮',title:{zh:'游戏',en:'Games'},rows:[{a:{zh:'钓鱼',en:'Fishing'},x:{zh:'趣味',en:'Fun'}},{a:{zh:'接球',en:'Catch'},x:{zh:'欢乐',en:'Joy'}}],cap:{zh:'一起玩耍',en:'Play together'},detail:{zh:'钓鱼、接球等小游戏欢乐多多，互动中拉近你与宠物的距离。',en:'Fishing, catch-ball and more bring lots of joy and shorten the distance between you and your pet.'}}
+  ]
+};
+</script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
