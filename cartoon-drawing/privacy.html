@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>隐私政策 | oneusop</title>
-<meta name="description" content="oneusop 各应用隐私政策。">
+<meta name="description" content="隐私政策">
 <script>
 (function () {
   try {
@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body class="privacy-page">
 <div class="bg-decor"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
@@ -29,12 +29,12 @@
     <div class="nav-left">
       <a class="nav-back" id="privacy-back" href="./index.html">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-        <span data-i18n="backHome">返回首页</span>
+        <span>返回应用</span>
       </a>
-      <a class="brand" id="privacy-home" href="./index.html"><span class="logo">🚀</span><span data-i18n="brand">oneusop</span></a>
+      <a class="brand" id="privacy-home" href="../index.html"><span class="logo">🚀</span><span data-i18n="brand">oneusop</span></a>
     </div>
     <div class="nav-links">
-      <a href="./index.html" id="privacy-apps" data-i18n="apps">全部应用</a>
+      <a href="../index.html" id="privacy-apps" data-i18n="apps">全部应用</a>
     </div>
     <div class="nav-actions">
       <span class="lang"><button data-lang="zh">中</button><button data-lang="en">EN</button></span>
@@ -86,12 +86,13 @@
       <p style="margin-top:10px">© <span id="year"></span> oneusop. <span data-i18n="rights">保留所有权利。</span></p>
     </div>
     <div class="f-links">
-      <a href="./index.html" data-i18n="apps">全部应用</a>
+      <a href="../index.html" data-i18n="apps">全部应用</a>
     </div>
   </div>
 </footer>
 
-<script src="assets/js/apps.js"></script>
-<script src="assets/js/main.js"></script>
+<script>window.PRIVACY_APP = 'cartoon-drawing';</script>
+<script src="../assets/js/apps.js"></script>
+<script src="../assets/js/main.js"></script>
 </body>
 </html>

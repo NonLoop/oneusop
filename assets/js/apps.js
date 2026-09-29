@@ -1,6 +1,6 @@
 /* =========================================================
    oneusop · central app registry + privacy policy content
-   Used by the shared privacy.html (?app=<slug>)
+   Used by root privacy.html and each app's privacy.html
    ========================================================= */
 (function () {
   'use strict';
@@ -14,7 +14,7 @@
       updated: { zh: '2026 年 1 月 1 日', en: 'January 1, 2026' }
     },
     'cartoon-drawing': {
-      slug: 'cartoon-drawing', name: { zh: '卡通绘画', en: 'Cartoon Drawing' }, theme: 'draw',
+      slug: 'cartoon-drawing', name: { zh: '卡通绘画', en: 'Cartoon Drawing' }, theme: 'drawing',
       email: 'oneusop@163.com',
       appStoreUrl: 'https://apps.apple.com/cn/app/%E5%8D%A1%E9%80%9A%E7%BB%98%E7%94%BB-%E5%A5%BD%E7%94%A8%E7%9A%84%E5%90%AF%E8%92%99%E7%BB%98%E7%94%BB%E8%BD%AF%E4%BB%B6/id6462798026',
       updated: { zh: '2026 年 1 月 1 日', en: 'January 1, 2026' }
@@ -62,35 +62,51 @@
     zh: {
       title: '隐私政策',
       updatedLabel: '最后更新',
+      heroSub: '透明 · 克制 · 可信任',
       intro: '欢迎使用 {app}。我们深知个人信息对您的重要性，并会尽力保护您的隐私与安全。本政策说明我们在您使用本应用时会如何处理相关信息。',
-      sections: [
-        { h: '我们收集的信息', p: '我们尽量精简数据收集。在正常运行过程中，本应用不会强制要求您提供姓名、邮箱等个人身份信息。部分功能（如您主动反馈）所提交的内容，仅用于回应您的需求。' },
-        { h: '自动收集的信息', p: '为改进体验，应用可能会收集设备型号、系统版本、崩溃日志等匿名化技术信息。这些数据不包含可直接识别您个人的内容，且主要用于稳定性与性能优化。' },
-        { h: '第三方服务', p: '本应用通过 Apple 的 App Store 分发，并可能使用 Apple 提供的标准机制（如 StoreKit、Family Controls 等）。相关数据处理遵循 Apple 的隐私政策。我们不向第三方出售您的任何个人信息。' },
-        { h: '儿童隐私', p: '部分应用面向儿童设计。我们特别重视未成年用户的保护，不会针对儿童进行广告追踪或收集超出必要范围的个人信息。若您是家长并希望了解或删除相关数据，欢迎随时联系我们。' },
-        { h: '数据安全', p: '我们采用合理的物理、电子及管理措施保护信息，防止未经授权的访问、泄露或丢失。本应用内的本地数据默认仅存储于您的设备之上。' },
-        { h: '您的权利', p: '您有权了解、更正或删除我们持有的您的个人信息，并可在设备系统中管理相关权限。如您希望行使上述权利，请通过下方联系方式与我们联系。' },
-        { h: '政策变更', p: '我们可能不时更新本隐私政策。重大变更将通过应用内公告或更新说明予以提示，更新后的政策自发布之日起生效。' }
+      trust: [
+        { icon: '🔒', t: '最小收集' },
+        { icon: '📱', t: '本地优先' },
+        { icon: '🧒', t: '保护儿童' },
+        { icon: '🚫', t: '不出售数据' }
       ],
-      contactLabel: '联系方式',
+      sections: [
+        { icon: '📋', h: '我们收集的信息', p: '我们尽量精简数据收集。在正常运行过程中，本应用不会强制要求您提供姓名、邮箱等个人身份信息。部分功能（如您主动反馈）所提交的内容，仅用于回应您的需求。' },
+        { icon: '📡', h: '自动收集的信息', p: '为改进体验，应用可能会收集设备型号、系统版本、崩溃日志等匿名化技术信息。这些数据不包含可直接识别您个人的内容，且主要用于稳定性与性能优化。' },
+        { icon: '🤝', h: '第三方服务', p: '本应用通过 Apple 的 App Store 分发，并可能使用 Apple 提供的标准机制（如 StoreKit、Family Controls 等）。相关数据处理遵循 Apple 的隐私政策。我们不向第三方出售您的任何个人信息。' },
+        { icon: '🧒', h: '儿童隐私', p: '部分应用面向儿童设计。我们特别重视未成年用户的保护，不会针对儿童进行广告追踪或收集超出必要范围的个人信息。若您是家长并希望了解或删除相关数据，欢迎随时联系我们。' },
+        { icon: '🛡️', h: '数据安全', p: '我们采用合理的物理、电子及管理措施保护信息，防止未经授权的访问、泄露或丢失。本应用内的本地数据默认仅存储于您的设备之上。' },
+        { icon: '⚖️', h: '您的权利', p: '您有权了解、更正或删除我们持有的您的个人信息，并可在设备系统中管理相关权限。如您希望行使上述权利，请通过下方联系方式与我们联系。' },
+        { icon: '🔄', h: '政策变更', p: '我们可能不时更新本隐私政策。重大变更将通过应用内公告或更新说明予以提示，更新后的政策自发布之日起生效。' }
+      ],
+      contactLabel: '联系我们',
       contactText: '如您对本隐私政策有任何疑问，或希望行使您的隐私权利，请通过以下邮箱与我们联系：',
+      contactHint: '我们通常会在 1–3 个工作日内回复',
       backLabel: '返回应用'
     },
     en: {
       title: 'Privacy Policy',
       updatedLabel: 'Last updated',
+      heroSub: 'Transparent · Minimal · Trustworthy',
       intro: 'Welcome to {app}. We understand how important your personal information is and are committed to protecting your privacy and security. This policy explains how we handle information when you use this application.',
+      trust: [
+        { icon: '🔒', t: 'Minimal collection' },
+        { icon: '📱', t: 'On-device first' },
+        { icon: '🧒', t: 'Child-safe' },
+        { icon: '🚫', t: 'Never sold' }
+      ],
       sections: [
-        { h: 'Information We Collect', p: 'We keep data collection to a minimum. The app does not require you to provide personal identifiers such as your name or email to function. Information you submit voluntarily (such as feedback) is used only to respond to your needs.' },
-        { h: 'Automatically Collected Information', p: 'To improve your experience, the app may collect anonymized technical data such as device model, OS version and crash logs. This data cannot directly identify you and is used solely for stability and performance.' },
-        { h: 'Third-Party Services', p: 'This app is distributed through the Apple App Store and may use Apple-provided standard mechanisms (e.g. StoreKit, Family Controls). Such processing follows Apple’s Privacy Policy. We never sell your personal information to any third party.' },
-        { h: "Children's Privacy", p: 'Some of our apps are designed for children. We pay special attention to protecting minors and do not target children with ad tracking or collect more personal information than necessary. Parents who wish to review or delete related data may contact us at any time.' },
-        { h: 'Data Security', p: 'We use reasonable physical, electronic and managerial safeguards to protect information against unauthorized access, disclosure or loss. Local data within the app is, by default, stored only on your device.' },
-        { h: 'Your Rights', p: 'You have the right to access, correct or delete your personal information and to manage related permissions in your device settings. To exercise these rights, please reach out via the contact details below.' },
-        { h: 'Changes to This Policy', p: 'We may update this privacy policy from time to time. Material changes will be highlighted via in-app notices or release notes, and the updated policy takes effect upon publication.' }
+        { icon: '📋', h: 'Information We Collect', p: 'We keep data collection to a minimum. The app does not require you to provide personal identifiers such as your name or email to function. Information you submit voluntarily (such as feedback) is used only to respond to your needs.' },
+        { icon: '📡', h: 'Automatically Collected Information', p: 'To improve your experience, the app may collect anonymized technical data such as device model, OS version and crash logs. This data cannot directly identify you and is used solely for stability and performance.' },
+        { icon: '🤝', h: 'Third-Party Services', p: 'This app is distributed through the Apple App Store and may use Apple-provided standard mechanisms (e.g. StoreKit, Family Controls). Such processing follows Apple’s Privacy Policy. We never sell your personal information to any third party.' },
+        { icon: '🧒', h: "Children's Privacy", p: 'Some of our apps are designed for children. We pay special attention to protecting minors and do not target children with ad tracking or collect more personal information than necessary. Parents who wish to review or delete related data may contact us at any time.' },
+        { icon: '🛡️', h: 'Data Security', p: 'We use reasonable physical, electronic and managerial safeguards to protect information against unauthorized access, disclosure or loss. Local data within the app is, by default, stored only on your device.' },
+        { icon: '⚖️', h: 'Your Rights', p: 'You have the right to access, correct or delete your personal information and to manage related permissions in your device settings. To exercise these rights, please reach out via the contact details below.' },
+        { icon: '🔄', h: 'Changes to This Policy', p: 'We may update this privacy policy from time to time. Material changes will be highlighted via in-app notices or release notes, and the updated policy takes effect upon publication.' }
       ],
       contactLabel: 'Contact Us',
       contactText: 'If you have any questions about this privacy policy, or wish to exercise your privacy rights, please contact us at:',
+      contactHint: 'We typically reply within 1–3 business days',
       backLabel: 'Back to App'
     }
   };

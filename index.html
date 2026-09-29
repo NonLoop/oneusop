@@ -3,46 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+(function () {
+  try {
+    var s = localStorage.getItem('oneusop_lang');
+    if (s === 'zh' || s === 'en') { document.documentElement.lang = s; return; }
+  } catch (e) {}
+  var nav = (navigator.language || navigator.userLanguage || (navigator.languages && navigator.languages[0]) || 'en').toLowerCase();
+  document.documentElement.lang = nav.indexOf('zh') === 0 ? 'zh' : 'en';
+})();
+</script>
 <title>oneusop · 用心打造每一款应用</title>
 <meta name="description" content="oneusop 出品的一系列优质应用：动物迷宫、卡通绘画、趣味拼图、精美时钟、小番茄、萌宠。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body>
-<div class="bg-decor"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
-<div class="bg-grid"></div>
+<body class="hub-page">
+<div id="hub-stage" class="hub-stage is-fallback" aria-hidden="true">
+  <canvas id="hub-canvas" class="hub-canvas"></canvas>
+  <div class="hub-fallback">
+    <span class="hf-orb o1"></span>
+    <span class="hf-orb o2"></span>
+    <span class="hf-orb o3"></span>
+    <span class="hf-ring r1"></span>
+    <span class="hf-ring r2"></span>
+  </div>
+</div>
+<div class="bg-grid hub-grid"></div>
 
-<nav class="nav">
+<nav class="nav hub-nav">
   <div class="container nav-inner">
     <a class="brand" href="index.html"><span class="logo">🚀</span><span data-i18n="brand">oneusop</span></a>
     <div class="nav-links">
       <a href="#apps" data-i18n="apps">全部应用</a>
-      <a href="#apps">Animal Maze</a>
-      <a href="#apps">Little Tomato</a>
-      <a href="#apps">Cute Pet</a>
     </div>
     <div class="nav-actions">
-      <span class="lang"><button data-lang="zh" class="active">中</button><button data-lang="en">EN</button></span>
+      <span class="lang"><button data-lang="zh">中</button><button data-lang="en">EN</button></span>
     </div>
   </div>
 </nav>
 
-<header class="hero container" style="grid-template-columns:1fr;text-align:center;min-height:auto;padding-top:90px;padding-bottom:40px">
-  <div>
-    <span class="badge" data-i18n="allApps">探索 oneusop 的全部应用</span>
-    <h1><span class="hl" data-i18n="brand">oneusop</span></h1>
-    <p class="tagline" id="hub-tagline">用心打造每一款应用，让数字生活更有温度</p>
-    <p class="lead" id="hub-lead" style="margin-left:auto;margin-right:auto">从孩子的启蒙益智，到成人的专注与放松，我们专注于把简单的想法做到极致。</p>
+<header class="hub-hero">
+  <div class="container hub-hero-inner">
+    <div class="hub-brand-glow">
+      <h1 class="hub-brand" data-i18n="brand">oneusop</h1>
+    </div>
+    <p class="hub-tagline" id="hub-tagline">用心打造每一款应用，让数字生活更有温度</p>
+    <p class="hub-lead" id="hub-lead">从孩子的启蒙益智，到成人的专注与放松，我们专注于把简单的想法做到极致。</p>
+    <div class="hub-cta">
+      <a class="btn btn-primary hub-cta-btn" href="#apps">
+        <span data-i18n="exploreApps">探索全部应用</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
   </div>
+  <a class="hub-scroll" href="#apps" aria-label="Scroll">
+    <span class="hub-scroll-line"></span>
+  </a>
 </header>
 
-<section class="section-pad container" id="apps">
+<section class="section-pad container hub-apps" id="apps">
   <div class="reveal" style="text-align:center">
     <span class="eyebrow" data-i18n="apps">全部应用</span>
     <h2 class="section-title" data-i18n="apps">全部应用</h2>
-    <p class="section-sub" id="apps-sub">六款精心设计的应用，覆盖启蒙、专注、放松与美好日常。</p>
+    <p class="section-sub" id="apps-sub">八款精心设计的应用，覆盖启蒙、专注、放松与美好日常。</p>
   </div>
   <div class="app-grid" id="app-grid"></div>
 </section>
@@ -99,9 +126,10 @@
   window.HUB_TEXT = {
     hubTagline:{zh:'用心打造每一款应用，让数字生活更有温度',en:'Crafting apps with heart, for a warmer digital life'},
     hubLead:{zh:'从孩子的启蒙益智，到成人的专注与放松，我们专注于把简单的想法做到极致。',en:'From kids’ early learning to adult focus and relaxation, we perfect the simplest ideas.'},
-    appsSub:{zh:'六款精心设计的应用，覆盖启蒙、专注、放松与美好日常。',en:'Six thoughtfully designed apps for learning, focus, relaxation and everyday joy.'}
+    appsSub:{zh:'八款精心设计的应用，覆盖启蒙、专注、放松与美好日常。',en:'Eight thoughtfully designed apps for learning, focus, relaxation and everyday joy.'}
   };
 </script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/hub-scene.js"></script>
 </body>
 </html>

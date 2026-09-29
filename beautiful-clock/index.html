@@ -3,6 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+(function () {
+  try {
+    var s = localStorage.getItem('oneusop_lang');
+    if (s === 'zh' || s === 'en') { document.documentElement.lang = s; return; }
+  } catch (e) {}
+  var nav = (navigator.language || navigator.userLanguage || (navigator.languages && navigator.languages[0]) || 'en').toLowerCase();
+  document.documentElement.lang = nav.indexOf('zh') === 0 ? 'zh' : 'en';
+})();
+</script>
+
 <title>精美时钟 · 一款好看又专业的全屏时钟 | oneusop</title>
 <meta name="description" content="精美时钟：一款好看又专业的全屏时钟，装点你的桌面。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +39,7 @@
       <a href="#features">Beautiful Clock</a>
     </div>
     <div class="nav-actions">
-      <span class="lang"><button data-lang="zh" class="active">中</button><button data-lang="en">EN</button></span>
+      <span class="lang"><button data-lang="zh">中</button><button data-lang="en">EN</button></span>
     </div>
   </div>
 </nav>
@@ -95,7 +106,7 @@
       <p style="margin-top:10px">© <span id="year"></span> oneusop. <span data-i18n="rights">保留所有权利。</span></p>
     </div>
     <div class="f-links">
-      <a href="../privacy.html?app=beautiful-clock" data-i18n="privacy">隐私政策</a>
+      <a href="privacy.html" data-i18n="privacy">隐私政策</a>
       <a href="#" data-i18n="support">支持</a>
       <a href="../index.html" data-i18n="apps">全部应用</a>
     </div>

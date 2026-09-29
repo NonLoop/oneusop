@@ -13,8 +13,18 @@
       var stored = localStorage.getItem('oneusop_lang');
       if (stored && SUPPORTED.indexOf(stored) !== -1) return stored;
     } catch (e) {}
-    var nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    return nav.indexOf('zh') === 0 ? 'zh' : 'en';
+    var list = [];
+    try {
+      if (navigator.languages && navigator.languages.length) {
+        for (var i = 0; i < navigator.languages.length; i++) list.push(navigator.languages[i]);
+      }
+    } catch (e2) {}
+    list.push(navigator.language || navigator.userLanguage || 'en');
+    for (var j = 0; j < list.length; j++) {
+      var code = String(list[j] || '').toLowerCase();
+      if (code.indexOf('zh') === 0) return 'zh';
+    }
+    return 'en';
   }
 
   function pick(obj, lang) {
@@ -41,7 +51,8 @@
       privacy: '隐私政策',
       support: '支持',
       langToggle: 'EN',
-      allApps: '探索 oneusop 的全部应用'
+      allApps: '探索 oneusop 的全部应用',
+      exploreApps: '探索全部应用'
     },
     en: {
       brand: 'oneusop',
@@ -59,7 +70,8 @@
       privacy: 'Privacy',
       support: 'Support',
       langToggle: '中',
-      allApps: 'Explore all oneusop apps'
+      allApps: 'Explore all oneusop apps',
+      exploreApps: 'Explore all apps'
     }
   };
 
@@ -91,14 +103,15 @@
     // hub app grid
     if (window.HUB_APPS) renderHub(window.HUB_APPS, lang, c);
 
-    // shared privacy page (?app=slug)
+    // privacy pages (root or per-app via PRIVACY_APP)
     if (window.ONEUSOP_PRIVACY) renderPrivacy(lang, c);
 
     // hub descriptive text
     if (window.HUB_TEXT) {
-      ['hubTagline', 'hubLead', 'appsSub'].forEach(function (id) {
-        var el = document.getElementById(id);
-        if (el && window.HUB_TEXT[id]) el.textContent = pick(window.HUB_TEXT[id], lang);
+      var hubMap = { hubTagline: 'hub-tagline', hubLead: 'hub-lead', appsSub: 'apps-sub' };
+      Object.keys(hubMap).forEach(function (key) {
+        var el = document.getElementById(hubMap[key]);
+        if (el && window.HUB_TEXT[key]) el.textContent = pick(window.HUB_TEXT[key], lang);
       });
     }
 
@@ -196,28 +209,60 @@
     observeReveals();
   }
 
+  function resolvePrivacySlug() {
+    if (window.PRIVACY_APP) return window.PRIVACY_APP;
+    var params = new URLSearchParams(window.location.search);
+    return params.get('app');
+  }
+
+  function privacyAssetBase() {
+    // per-app pages live in /<slug>/privacy.html and load assets from ../
+    return window.PRIVACY_APP ? '../' : './';
+  }
+
   function renderPrivacy(lang, c) {
     var apps = window.ONEUSOP_APPS || {};
     var data = window.ONEUSOP_PRIVACY[lang] || window.ONEUSOP_PRIVACY.en;
+    var base = privacyAssetBase();
 
-    var params = new URLSearchParams(window.location.search);
-    var slug = params.get('app');
+    var slug = resolvePrivacySlug();
     var app = apps[slug];
 
-    // apply theme + app name
-    var appName = app ? pick(app.name, lang) : pick({ zh: 'oneusop', en: 'oneusop' }, lang);
+    var appName = app ? pick(app.name, lang) : 'oneusop';
 
     if (app && app.theme) document.documentElement.setAttribute('data-theme', app.theme);
     if (document.getElementById('pt-app')) document.getElementById('pt-app').textContent = appName;
     if (document.getElementById('pt-title')) {
-      document.getElementById('pt-title').textContent = appName + ' · ' + data.title;
-      document.title = appName + ' · ' + data.title;
+      document.getElementById('pt-title').textContent = app
+        ? (appName + ' · ' + data.title)
+        : data.title;
+      document.title = app
+        ? (appName + ' · ' + data.title + ' | oneusop')
+        : (data.title + ' | oneusop');
     }
-    if (document.getElementById('pt-updated')) {
-      document.getElementById('pt-updated').textContent = data.updatedLabel + '：' + (app ? pick(app.updated, lang) : '—');
+    if (document.getElementById('pt-hero-sub')) {
+      document.getElementById('pt-hero-sub').textContent = data.heroSub || '';
+    }
+    if (document.getElementById('pt-updated-text')) {
+      var sep = lang === 'zh' ? '：' : ': ';
+      document.getElementById('pt-updated-text').textContent =
+        data.updatedLabel + sep + (app ? pick(app.updated, lang) : '—');
+    } else if (document.getElementById('pt-updated')) {
+      var sep2 = lang === 'zh' ? '：' : ': ';
+      document.getElementById('pt-updated').textContent =
+        data.updatedLabel + sep2 + (app ? pick(app.updated, lang) : '—');
     }
 
-    // intro (replace {app})
+    // trust chips
+    var trust = document.getElementById('pt-trust');
+    if (trust && data.trust) {
+      trust.innerHTML = data.trust.map(function (t, i) {
+        return '<span class="p-trust reveal" style="--d:' + i + '"><span class="ic">' +
+          t.icon + '</span><span>' + t.t + '</span></span>';
+      }).join('');
+    }
+
+    // intro
     if (document.getElementById('pt-intro')) {
       document.getElementById('pt-intro').textContent = data.intro.replace(/\{app\}/g, appName);
     }
@@ -226,31 +271,41 @@
     var sec = document.getElementById('pt-sections');
     if (sec) {
       sec.innerHTML = data.sections.map(function (s, i) {
-        return '<div class="p-sec reveal">' +
-          '<div class="p-num">' + (i + 1) + '</div>' +
+        var icon = s.icon || '•';
+        var n = String(i + 1).padStart(2, '0');
+        return '<div class="p-sec reveal" style="--d:' + (i + 1) + '">' +
+          '<div class="p-num"><span class="p-icon">' + icon + '</span><span class="p-idx">' + n + '</span></div>' +
           '<div class="p-body"><h3>' + s.h + '</h3><p>' + s.p + '</p></div></div>';
       }).join('');
     }
 
     // contact
     if (document.getElementById('pt-contact-label')) document.getElementById('pt-contact-label').textContent = data.contactLabel;
+    if (document.getElementById('pt-contact-title')) document.getElementById('pt-contact-title').textContent = data.contactLabel;
     if (document.getElementById('pt-contact-text')) document.getElementById('pt-contact-text').textContent = data.contactText;
+    if (document.getElementById('pt-contact-hint')) document.getElementById('pt-contact-hint').textContent = data.contactHint || '';
     var mail = document.getElementById('pt-email');
     if (mail) {
       var email = app && app.email ? app.email : 'oneusop@163.com';
-      mail.textContent = email;
+      var label = mail.querySelector('span');
+      if (label) label.textContent = email;
+      else mail.textContent = email;
       mail.href = 'mailto:' + email;
     }
 
     // back-to-app vs back-home link
     var back = document.getElementById('privacy-back');
     if (back) {
-      back.setAttribute('data-i18n', 'backHome');
-      back.querySelector('span').textContent = app ? data.backLabel : c.backHome;
-      back.href = app ? ('./' + app.slug + '/') : './index.html';
+      back.setAttribute('data-i18n', app ? '' : 'backHome');
+      var backSpan = back.querySelector('span');
+      if (backSpan) backSpan.textContent = app ? data.backLabel : c.backHome;
+      back.href = app ? './index.html' : (base + 'index.html');
     }
     var home = document.getElementById('privacy-home');
-    if (home) home.href = './index.html';
+    if (home) home.href = base + 'index.html';
+
+    var appsLink = document.getElementById('privacy-apps');
+    if (appsLink) appsLink.href = base + 'index.html';
 
     observeReveals();
   }
